@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include '../includes/head.html' %}
+<style type="text/css">
+    html,
+    body {
+        height: 100%;
+        margin: 0px;
+    }
+
+    .max-height {
+        height: 100%;
+    }
+
+
+#login_side {
+    position: fixed;
+    top: 30%;
+    left: 10%;
+}
+
+</style>
+
+<body background='./img/login.jpg'>
+    <div class="col-sm-7">
+        <div class="white" id="login_side">
+           <h1 style="font-size:64px"> BoilerPlate </h1>
+        </div>
+    </div>
+    <div class="panel max-height col-sm-5 border-radius-0 margin-bottom-0 padding-top-15-percent">
+        <div class="panel-heading ">
+            <h3 class="panel-title">BoilerPlate | Login</h3>
+        </div>
+        <div class="panel-body">
+            <form role="form" method="post" action="/login" autocomplete="off">
+                <fieldset>
+                    <div class="form-group">
+                        <label class="label label-danger">{{error}}</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" placeholder="Username" name="userName" type="text" autofocus>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                    </div>
+                    <!-- Change this to a button or input when using this as a form -->
+                    <button type="submit" class="btn btn-lg btn-primary btn-block">Login</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

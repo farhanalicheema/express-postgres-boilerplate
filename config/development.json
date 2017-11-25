@@ -1,0 +1,9 @@
+{
+    "port": 55557,
+    "host": "localhost:55557",
+    "dbName": "boilerplate",
+    "dbUser": "postgres",
+    "dbPassword": "admin",
+    "hoursPerDay": 10,
+    "hoursPerMonth": 260
+}

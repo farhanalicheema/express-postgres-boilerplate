@@ -1,0 +1,70 @@
+ {% extends './layouts/default.html' %} {% block content %}
+
+<div class="row">
+    <div class="col-sm-8">
+        <h1 class="">Welcome to Node boiler plate</h1>
+    </div>
+    <div class="col-sm-4 text-right">
+        <h1 class="">
+            {%if task.remainingHours > 0%}
+            <button class="btn btn-primary" data-target="#newinvoiceModal" data-toggle="modal"><span class="fa fa-plus"></span> Generate new Invoice</button>            {%endif%}
+        </h1>
+    </div>
+    <!-- Modal -->
+    <div id="newinvoiceModal" class="modal modal-lg right fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Add New invoice</h4>
+                </div>
+                <form role="form" method="post" action="/invoices" autocomplete="off" enctype="multipart/form-data">
+                    <div class="modal-body">
+                        <fieldset>
+
+
+                            <div class="form-group">
+                                <span>Working at <b>{{task.workingRate}} AED</b> {%if task.withDiesel == 'YES'%}with{%else%}without{%endif%} diesel<span/>
+                                   
+                                   {%if task.workingHours > 0%}
+                                        <br><span>Total Hours <b>{{task.workingHours}}</b><span/>
+                                        <br><span>Remaing Hours <b>{{task.remainingHours}}</b><span/>
+                                            {%else%}
+                                        <br><span>Number of hours not provided yet your hours entered will be considered as total hours<span/>
+                                            {%endif%} 
+                                     </div>
+
+                        <div class="form-group">
+                            <input type="file" name="timesheetPhoto" class="filestyle" data-iconName="fa fa-upload" accept="image/*" data-buttonText="Attach Time Sheet">
+                        </div>
+                                <div class="form-group">
+                                <input class="form-control" placeholder="invoice Title" name="invoiceTitle" type="text" required>
+                            </div>
+                            <div class="row">
+                             <div class="form-group col-sm-6">
+                                    <input class="form-control" placeholder="Hours" min="1" max="{{task.remainingHours}}" name="workingHours" type="number" required />
+                                </div>
+                                     <div class="form-group col-sm-6">
+                                    <input class="form-control" placeholder="Discount if Any" min="1" name="discount" type="number" />
+                                </div>
+                                </div>
+                            <div class="form-group">
+                                <textarea class="form-control" name="invoiceDescription" placeholder="Description"></textarea>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="modal-footer text-right">
+                        <input value="{{task.taskId}}" name="taskId" type="hidden"/>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Add New invoice</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+    {% endblock %}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+{% include '../includes/head.html' %}
+
+
+<body>
+        <nav class="navbar navbar-default navbar-static-top navbar-alphasaur-fix" role="navigation" style="margin-bottom: 0">
+            {% include '../includes/header.html' %} {% include '../includes/sidebar.html' %}
+        </nav>
+        <div id="page-wrapper" class="alphasaur-wrapper">
+            {% include '../includes/messages.html' %} {% block content %}{% endblock %}
+        </div>
+
+        {% include '../includes/footer.html' %}
+        <!-- Modal -->
+        <div id="logoutModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Log Out</h4>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you want to sign out?
+                    </div>
+                    <div class="modal-footer text-right">
+                        <a type="button" class="btn btn-default" data-dismiss="modal">Close</a>
+                        <a href="/logout" class="btn btn-primary">Logout</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        {% include '../includes/scripts.html' %}
+    </div>
+</body>
+
+</html>
