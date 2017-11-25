@@ -1,0 +1,573 @@
+
+@media (max-width: 767px) {
+  .padding-xs-0{
+    padding: 0px !important
+}
+}
+
+@media print {
+    .myDivToPrint {
+        background-color: white;
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        margin: 0;
+        padding: 15px;
+        font-size: 14px;
+        line-height: 18px;
+    }
+}
+
+.hidden{
+    display: none !important;
+}
+
+  @media (min-width: 768px) {
+  .footer {
+        padding-top: 10px;
+        padding-bottom:  1px;
+        padding-right:  10px;
+        border-left: 1px solid #e7e7e7;
+        border-top: 1px solid #e7e7e7;
+        background-color: #f8f8f8;
+    }
+}
+.disabled.day, .month.disabled,.year.disabled {
+    color: lightgray !important;
+}
+
+   .img-circle {
+        border-radius: 50%;
+        height: 120px;
+        width: 120px;
+    }
+
+    .panel-default>.panel-heading {
+    color: #fff;
+    background-color: #333333;
+    border-color: #333333;
+}
+
+
+.navbar-default, .sidebar {
+    color: white;
+    background-color: #333333;
+    border-color: #444444;
+}
+
+.white{
+    color: white !important;
+}
+
+nav>li>a:focus, .nav>li>a:hover {
+    text-decoration: none;
+    color: white;
+    background-color: #444444;
+}
+
+.sidebar ul li a.active {
+    color: white;
+    background-color: #444444;
+}
+.sidebar ul li a {
+    color: white;
+}
+.sidebar ul li {
+    border-bottom: 1px solid #444444;
+}
+
+@media (min-width: 768px){
+.sidebar {
+    height: -webkit-fill-available;
+    min-height: 100% !important;
+}
+}
+
+
+a {
+    text-decoration: none !important;
+}
+
+.navbar-alphasaur-fix {
+    position: fixed !important;
+         width: -webkit-fill-available !important;
+}
+
+.alphasaur-wrapper{
+    top:50px !important;
+    margin-bottom:70pt !important;
+     position:relative !important;
+         float:top;
+
+}
+
+    footer.sticky-footer {
+        position: fixed !important;
+        right: 0% !important;
+        bottom: 0px !important;
+        width: 100%;
+        height: 56px;
+        background-color: #e9ecef;
+        line-height: 55px;
+    }
+
+    .padding-top-0{
+        padding-top: 0px !important;
+    }
+
+    .padding-top-3{
+        padding-top: 3px !important;
+    }
+     .padding-top-5{
+        padding-top: 5px !important;
+    }
+     .padding-top-10{
+        padding-top: 10px !important;
+    }
+     .padding-top-15{
+        padding-top: 15px !important;
+    }
+     .padding-top-20{
+        padding-top: 20px !important;
+    }
+     .padding-top-25{
+        padding-top: 25px !important;
+    }
+     .padding-top-30{
+        padding-top: 30px !important;
+    }
+     .padding-top-35{
+        padding-top: 35px !important;
+    }
+     .padding-top-40{
+        padding-top: 40px !important;
+    }
+     .padding-top-45{
+        padding-top: 45px !important;
+    }
+     .padding-top-50{
+        padding-top: 50px !important;
+    }
+
+     	.padding-left-0{
+        padding-left: 0px !important;
+    }
+     	.padding-left-3{
+        padding-left: 3px !important;
+    }
+     .padding-left-5{
+        padding-left: 5px !important;
+    }
+     .padding-left-10{
+        padding-left: 10px !important;
+    }
+     .padding-left-15{
+        padding-left: 15px !important;
+    }
+     .padding-left-20{
+        padding-left: 20px !important;
+    }
+     .padding-left-25{
+        padding-left: 25px !important;
+    }
+     .padding-left-30{
+        padding-left: 30px !important;
+    }
+     .padding-left-35{
+        padding-left: 35px !important;
+    }
+     .padding-left-40{
+        padding-left: 40px !important;
+    }
+     .padding-left-45{
+        padding-left: 45px !important;
+    }
+     .padding-left-50{
+        padding-left: 50px !important;
+    }
+
+     	.padding-right-0{
+        padding-right: 0px !important;
+    }
+     	.padding-right-3{
+        padding-right: 3px !important;
+    }
+     .padding-right-5{
+        padding-right: 5px !important;
+    }
+     .padding-right-10{
+        padding-right: 10px !important;
+    }
+     .padding-right-15{
+        padding-right: 15px !important;
+    }
+     .padding-right-20{
+        padding-right: 20px !important;
+    }
+     .padding-right-25{
+        padding-right: 25px !important;
+    }
+     .padding-right-30{
+        padding-right: 30px !important;
+    }
+     .padding-right-35{
+        padding-right: 35px !important;
+    }
+     .padding-right-40{
+        padding-right: 40px !important;
+    }
+     .padding-right-45{
+        padding-right: 45px !important;
+    }
+     .padding-right-50{
+        padding-right: 50px !important;
+    }
+
+     	.padding-bottom-0{
+        padding-bottom: 0px !important;
+    }
+     	.padding-bottom-3{
+        padding-bottom: 3px !important;
+    }
+     .padding-bottom-5{
+        padding-bottom: 5px !important;
+    }
+     .padding-bottom-10{
+        padding-bottom: 10px !important;
+    }
+     .padding-bottom-15{
+        padding-bottom: 15px !important;
+    }
+     .padding-bottom-20{
+        padding-bottom: 20px !important;
+    }
+     .padding-bottom-25{
+        padding-bottom: 25px !important;
+    }
+     .padding-bottom-30{
+        padding-bottom: 30px !important;
+    }
+     .padding-bottom-35{
+        padding-bottom: 35px !important;
+    }
+     .padding-bottom-40{
+        padding-bottom: 40px !important;
+    }
+     .padding-bottom-45{
+        padding-bottom: 45px !important;
+    }
+     .padding-bottom-50{
+        padding-bottom: 50px !important;
+    }
+     	.padding-0{
+        padding: 0px !important;
+    }
+     	.padding-3{
+        padding: 3px !important;
+    }
+     .padding-5{
+        padding: 5px !important;
+    }
+     .padding-10{
+        padding: 10px !important;
+    }
+     .padding-15{
+        padding: 15px !important;
+    }
+     .padding-20{
+        padding: 20px !important;
+    }
+     .padding-25{
+        padding: 25px !important;
+    }
+     .padding-30{
+        padding: 30px !important;
+    }
+     .padding-35{
+        padding: 35px !important;
+    }
+     .padding-40{
+        padding: 40px !important;
+    }
+     .padding-45{
+        padding: 45px !important;
+    }
+     .padding-50{
+        padding: 50px !important;
+    }
+
+
+
+    .margin-top-0{
+        margin-top: 0px !important;
+    }
+
+    .margin-top-3{
+        margin-top: 3px !important;
+    }
+     .margin-top-5{
+        margin-top: 5px !important;
+    }
+     .margin-top-10{
+        margin-top: 10px !important;
+    }
+     .margin-top-15{
+        margin-top: 15px !important;
+    }
+     .margin-top-20{
+        margin-top: 20px !important;
+    }
+     .margin-top-25{
+        margin-top: 25px !important;
+    }
+     .margin-top-30{
+        margin-top: 30px !important;
+    }
+     .margin-top-35{
+        margin-top: 35px !important;
+    }
+     .margin-top-40{
+        margin-top: 40px !important;
+    }
+     .margin-top-45{
+        margin-top: 45px !important;
+    }
+     .margin-top-50{
+        margin-top: 50px !important;
+    }
+   	.margin-left-0{
+        margin-left: 0px !important;
+    }
+     	.margin-left-3{
+        margin-left: 3px !important;
+    }
+     .margin-left-5{
+        margin-left: 5px !important;
+    }
+     .margin-left-10{
+        margin-left: 10px !important;
+    }
+     .margin-left-15{
+        margin-left: 15px !important;
+    }
+     .margin-left-20{
+        margin-left: 20px !important;
+    }
+     .margin-left-25{
+        margin-left: 25px !important;
+    }
+     .margin-left-30{
+        margin-left: 30px !important;
+    }
+     .margin-left-35{
+        margin-left: 35px !important;
+    }
+     .margin-left-40{
+        margin-left: 40px !important;
+    }
+     .margin-left-45{
+        margin-left: 45px !important;
+    }
+     .margin-left-50{
+        margin-left: 50px !important;
+    }
+
+     	.margin-right-0{
+        margin-right: 0px !important;
+    }
+
+     	.margin-right-3{
+        margin-right: 3px !important;
+    }
+     .margin-right-5{
+        margin-right: 5px !important;
+    }
+     .margin-right-10{
+        margin-right: 10px !important;
+    }
+     .margin-right-15{
+        margin-right: 15px !important;
+    }
+     .margin-right-20{
+        margin-right: 20px !important;
+    }
+     .margin-right-25{
+        margin-right: 25px !important;
+    }
+     .margin-right-30{
+        margin-right: 30px !important;
+    }
+     .margin-right-35{
+        margin-right: 35px !important;
+    }
+     .margin-right-40{
+        margin-right: 40px !important;
+    }
+     .margin-right-45{
+        margin-right: 45px !important;
+    }
+     .margin-right-50{
+        margin-right: 50px !important;
+    }
+
+     	.margin-bottom-0{
+        margin-bottom: 0px !important;
+    }
+
+     	.margin-bottom-3{
+        margin-bottom: 3px !important;
+    }
+     .margin-bottom-5{
+        margin-bottom: 5px !important;
+    }
+     .margin-bottom-10{
+        margin-bottom: 10px !important;
+    }
+     .margin-bottom-15{
+        margin-bottom: 15px !important;
+    }
+     .margin-bottom-20{
+        margin-bottom: 20px !important;
+    }
+     .margin-bottom-25{
+        margin-bottom: 25px !important;
+    }
+     .margin-bottom-30{
+        margin-bottom: 30px !important;
+    }
+     .margin-bottom-35{
+        margin-bottom: 35px !important;
+    }
+     .margin-bottom-40{
+        margin-bottom: 40px !important;
+    }
+     .margin-bottom-45{
+        margin-bottom: 45px !important;
+    }
+     .margin-bottom-50{
+        margin-bottom: 50px !important;
+    }
+
+    	.margin-0{
+        margin: 0px !important;
+    }
+     	.margin-3{
+        margin: 3px !important;
+    }
+     .margin-5{
+        margin: 5px !important;
+    }
+     .margin-10{
+        margin: 10px !important;
+    }
+     .margin-15{
+        margin: 15px !important;
+    }
+     .margin-20{
+        margin: 20px !important;
+    }
+     .margin-25{
+        margin: 25px !important;
+    }
+     .margin-30{
+        margin: 30px !important;
+    }
+     .margin-35{
+        margin: 35px !important;
+    }
+     .margin-40{
+        margin: 40px !important;
+    }
+     .margin-45{
+        margin: 45px !important;
+    }
+     .margin-50{
+        margin: 50px !important;
+    }
+
+    .border-radius-0{
+        border-radius: 0px !important;
+    }
+
+    .padding-top-15-percent{
+        padding-top: 15%;
+    }
+
+    /*******************************
+* MODAL AS LEFT/RIGHT SIDEBAR
+* Add "left" or "right" in modal parent div, after class="modal".
+* Get free snippets on bootpen.com
+*******************************/
+	.modal.left .modal-dialog,
+	.modal.right .modal-dialog {
+		position: fixed;
+		margin: auto;
+		 /* width: 320px;  */
+		height: 100%;
+		-webkit-transform: translate3d(0%, 0, 0);
+		    -ms-transform: translate3d(0%, 0, 0);
+		     -o-transform: translate3d(0%, 0, 0);
+		        transform: translate3d(0%, 0, 0);
+	}
+
+	.modal.left .modal-content,
+	.modal.right .modal-content {
+		height: 100%;
+		overflow-y: auto;
+	}
+	
+	.modal.left .modal-body,
+	.modal.right .modal-body {
+		padding: 15px 15px 80px;
+	}
+
+/*Left*/
+	.modal.left.fade .modal-dialog{
+		left: -320px;
+		-webkit-transition: opacity 0.3s linear, left 0.3s ease-out;
+		   -moz-transition: opacity 0.3s linear, left 0.3s ease-out;
+		     -o-transition: opacity 0.3s linear, left 0.3s ease-out;
+		        transition: opacity 0.3s linear, left 0.3s ease-out;
+	}
+	
+	.modal.left.fade.in .modal-dialog{
+		left: 0;
+	}
+        
+/*Right*/
+	.modal.right.fade .modal-dialog {
+		right: -320px;
+		-webkit-transition: opacity 0.3s linear, right 0.3s ease-out;
+		   -moz-transition: opacity 0.3s linear, right 0.3s ease-out;
+		     -o-transition: opacity 0.3s linear, right 0.3s ease-out;
+		        transition: opacity 0.3s linear, right 0.3s ease-out;
+	}
+	
+	.modal.right.fade.in .modal-dialog {
+		right: 0;
+	}
+
+/* ----- MODAL STYLE ----- */
+	.modal-content {
+		border-radius: 0;
+		border: none;
+	}
+
+	.modal-header {
+		border-bottom-color: #EEEEEE;
+		background-color: #FAFAFA;
+    }
+    
+    @media screen and (min-width: 768px) {
+  .modal-lg{
+      width:50% !important;
+  }
+
+  .modal-sm{
+      width:300px;
+  }
+    }
+
+    
