@@ -1,102 +1,29 @@
-var Users = require('../models/users');
-var crypto = require('crypto');
+/**
+ * This file contains all the gatekeepers, gatekeepers as name represents validates the request before doing any other action
+ * 
+ */
 
-module.exports.authenticateUser = function (req, res, next) {
-  if (req.headers['authorization']) {
-    var splitedAuth = req.headers['authorization'].split(':');
-    var userName = splitedAuth[0];
-    var password = splitedAuth[1];
-
-    try {
-
-      Users.findOne({
-        where: {
-          userName: userName
-        }
-      })
-        .then(function (userFromRepo) {
-          if (userFromRepo) {
-            var salt = userFromRepo.passwordSalt;
-            password = crypto.createHmac('sha256', salt)
-              .update(password)
-              .digest('hex');
-
-            if (password == userFromRepo.password) {
-              Companies.findOne({
-                where: {
-                  companyId: userFromRepo.companyId,
-                  active: 'YES'
-                }
-              })
-                .then(function (companyFromRepo) {
-                  if (companyFromRepo) {
-                    req.userName = userName;
-                    req.companyId = userFromRepo.companyId;
-                    req.companyName = companyFromRepo.companyName;
-                    req.documentsRequired = companyFromRepo.documentsRequired;
-                    next();
-                  }
-                  else {
-                    res.statusCode = 401;
-                    res.setHeader('response-description', 'Invalid user name or password');
-                    res.end();
-                  }
-                })
-                .catch(function (err) {
-                  console.log(err)
-                  res.statusCode = 500;
-                  res.setHeader('response-description', 'Oops, Something went wrong ER9211633');
-                  res.end();
-                });
-            }
-            else {
-              res.statusCode = 401;
-              res.setHeader('response-description', 'Invalid user name or password');
-              res.end();
-            }
-          }
-          else {
-            res.statusCode = 401;
-            res.setHeader('response-description', 'Invalid user name or password');
-            res.end();
-          }
-        })
-        .catch(function (err) {
-          console.log(err)
-          res.statusCode = 500;
-          res.setHeader('response-description', 'Oops, Something went wrong ER9211633');
-          res.end();
-        });
-
-    } catch (err) {
-      res.statusCode = 500;
-      res.setHeader('response-description', 'Oops, Something went wrong ER9211634');
-      res.end();
-    }
-
-  }
-  else {
-    res.statusCode = 401;
-    res.setHeader('response-description', 'Invalid user name or password');
-    res.end();
-  }
-};
-
+ // This gatekeeper authenticates wether user has successfully logged in and the session is set
 module.exports.authenticateSession = function (req, res, next) {
-  if (req.session.transbott_userName && req.session.transbott_password) {
+  // if user successfully logged in and session was set then let request to pass the gatekeeper
+  if (req.session.boilerplate_userName && req.session.boilerplate_password) {
     next();
   }
   else {
+  // if user did not successfully logged in and session was not set then redirect user to logout
     res.redirect('/logout');
   }
 };
 
 
-module.exports.unauthenticateSession = function (req, res, next) {
-  if (req.session.transbott_userName && req.session.transbott_password) {
+ // This gatekeeper authenticates wether user is already logged in and the session is set
+module.exports.unAuthenticateSession = function (req, res, next) {
+ // if user is already logged in and the session is set then redirect him to home page
+  if (req.session.boilerplate_userName && req.session.boilerplate_password) {
     res.redirect('/');
   }
   else {
+ // if user is not already logged in and the session is not set then let him pass the gatekeeper   
     next();
   }
 };

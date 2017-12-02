@@ -1,9 +1,10 @@
 {
     "port": 55557,
-    "host": "transbot.alphasaur.com",
-    "dbName": "alphasau_transbot",
-    "dbUser": "alphasau_admin",
-    "dbPassword": "Transbot1907",
-    "hoursPerDay": 10,
-    "hoursPerMonth": 260
+    "host": "example.com",
+    "apiPort": 55557,
+    "apiHost": "api.example.com",
+    "dbName": "boilerplate",
+    "dbHost": "db.example.com",
+    "dbUser": "postgres",
+    "dbPassword": "admin"
 }

@@ -1,8 +1,30 @@
-const http = require('http');
-const FormData = require('form-data');
-const fs = require('fs');
-const utils = require('./utils');
+/**
+ * This file contains the helping functions for making API Request
+ */
 
+ // Node http module to make http calls ( https://nodejs.org/api/http.html )
+const http = require('http');
+// A library to create readable "multipart/form-data" streams. Can be used to submit forms and file uploads to other web applications. ( https://www.npmjs.com/package/form-data )
+const FormData = require('form-data');
+// File I/O is provided by simple wrappers around standard POSIX functions ( https://nodejs.org/api/fs.html )
+const fs = require('fs');
+// Including utils which contains few helping function
+const utils = require('./utils');
+ // Getting the environmental variables
+var config = require('../config/config');
+
+
+// This helper is for making simple GET,POST,DELETE and PUT calls, 
+// It takes 4 input parameters
+// 1. Request as req
+// 2. URI as path
+// 3. HTTP Method as method
+// 4. And Authorization string
+// 
+// And Returns 3 parameters
+// 1. statusCode of API response
+// 2. description message
+// 3. response body
 module.exports.genericAPIHelperWithAuth = function (req, path, method, auth, callback) {
 
     var repo = {
@@ -13,8 +35,8 @@ module.exports.genericAPIHelperWithAuth = function (req, path, method, auth, cal
 
     var body = JSON.stringify(req.body);
     var options = {
-        host: '127.0.0.1',
-        port: '55557',
+        host: config.apiHost,
+        port: config.apiPort,
         path: path,
         method: method,
         headers: {
@@ -55,6 +77,18 @@ module.exports.genericAPIHelperWithAuth = function (req, path, method, auth, cal
 
 };
 
+// This helper is for making multipart POST and PUT calls, 
+// It takes 5 input parameters
+// 1. Request as req
+// 2. URI as path
+// 3. HTTP Method as method
+// 4. FileNames which are to be sent
+// 5. And Authorization string
+// 
+// And Returns 3 parameters
+// 1. statusCode of API response
+// 2. description message
+// 3. response body
 module.exports.genericAPIMultiPartHelperWithAuth = function (req, path, method, fileNames, auth, callback) {
 
     var repo = {
@@ -63,6 +97,9 @@ module.exports.genericAPIMultiPartHelperWithAuth = function (req, path, method, 
         'response': ''
     }
 
+    /**
+     * Generating a request body which will contain files also using the form-data module
+     */
     var form = new FormData();
 
     var nameArray = [];
@@ -92,8 +129,8 @@ module.exports.genericAPIMultiPartHelperWithAuth = function (req, path, method, 
     var headers = form.getHeaders();
     headers['Authorization'] = auth;
     var options = {
-        host: '127.0.0.1',
-        port: '55555',
+        host: config.apiHost,
+        port: config.apiPort,
         path: path,
         method: method,
         headers: headers
@@ -109,9 +146,6 @@ module.exports.genericAPIMultiPartHelperWithAuth = function (req, path, method, 
             responseString += chunk;
         });
         resp.on('end', function () {
-            // if (responseString) {
-            //     repo.response = JSON.parse(responseString);
-            // }
             repo.statusCode = resp.statusCode;
             repo.description = resp.headers['response-description'];
             callback(repo);

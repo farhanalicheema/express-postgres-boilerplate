@@ -1,15 +1,27 @@
+// Fast, unopinionated, minimalist web framework for node. ( https://www.npmjs.com/package/express )
 var express = require('express');
+// The path module provides utilities for working with file and directory paths. ( https://nodejs.org/api/path.html )
 var path = require('path');
 var rMyRoute = express.Router();
+// File I/O is provided by simple wrappers around standard POSIX functions ( https://nodejs.org/api/fs.html )
 var fs = require('fs');
+ // Including db.js which contains the database configuration
 var db = require('./config/db');
+ // Getting the environmental variables
 var config = require('./config/config.js');
+// Parse incoming request bodies in a middleware before your handlers, available under the req.body property ( https://www.npmjs.com/package/body-parser )
 var bodyParser = require('body-parser');
+// Parse Cookie header and populate req.cookies with an object keyed by the cookie names ( https://www.npmjs.com/package/cookie-parser )
 var cookieParser = require('cookie-parser');
+// Create a session middleware with the given options ( https://www.npmjs.com/package/express-session )
 var session = require('express-session');
-var multer = require('multer');
+// Multer is a node.js middleware for handling multipart/form-data, which is primarily used for uploading files ( https://www.npmjs.com/package/multer )
+var multer = require('multer'); 
+// module used for saving session data in database ( https://www.npmjs.com/package/express-sequelize-session )
 const SessionStore = require('express-session-sequelize')(session.Store);
+
 var app = express(),
+// Including swig templating engine ( https://www.npmjs.com/package/swig)
   swig = require('swig'),
   people;
 
